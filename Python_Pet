@@ -1,0 +1,53 @@
+# สร้าง class Animal
+class Animal:
+    def __init__(self):
+        print("create animal")
+
+    def __del__(self):
+        print("delete animal")
+
+    def sound(self):
+        print("animal makes a sound")
+
+# สร้าง class Dog ที่สืบทอดจาก Animal
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()  # เรียก constructor ของ Animal
+        print("dog")
+
+    def __del__(self):
+        print("delete dog")
+        super().__del__()  # เรียก destructor ของ Animal
+
+    def sound(self):
+        print("dog barks")
+
+# สร้าง class Cat ที่สืบทอดจาก Animal
+class Cat(Animal):
+    def __init__(self):
+        super().__init__()  # เรียก constructor ของ Animal
+        print("cat")
+
+    def __del__(self):
+        print("delete cat")
+        super().__del__()  # เรียก destructor ของ Animal
+
+    def sound(self):
+        print("cat meows")
+
+# สร้าง object a ของ class Animal
+a = Animal()
+a.sound()  # เรียกใช้ method sound
+
+# สร้าง object d ของ class Dog
+d = Dog()
+d.sound()  # เรียกใช้ method sound
+
+# สร้าง object c ของ class Cat
+c = Cat()
+c.sound()  # เรียกใช้ method sound
+
+# ลบ object ที่สร้างขึ้น
+del a
+del d
+del c
