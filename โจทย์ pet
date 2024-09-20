@@ -1,0 +1,19 @@
+เขียน Java, C++, Python
+1. สร้าง class Animal
+	- constructor พิมพ์ create animal
+	- destructor พิมพ์ delete animal
+	- method sound พิมพ์ animal makes a sound
+2. สร้าง class Dog
+	- constructor พิมพ์ dog
+	- destructor พิมพ์ delete dog
+	- override method sound พิมพ์ dog barks
+3. สร้าง class Cat เป็น subclass ของ Animal 
+	- constructor พิมพ์ dog
+	- destructor พิมพ์ delete dog
+	- override method sound พิมพ์ cat meows
+4. สร้าง object a ของ class animal
+5. สร้าง object d ของ class dog
+6. สร้าง object c ของ class cat
+
+
+	
