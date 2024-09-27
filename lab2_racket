@@ -1,0 +1,61 @@
+#lang racket/base
+
+(define pi 3.141592653589793)
+
+;1
+(define (sphere r)
+  (* (/ 4 3) pi (* r r r)))
+
+;2
+(define (triangle w h)
+  (* 1/2 w h))
+  
+;3
+(define (grade score)
+  (cond
+    [(< score 40) 'F]
+    [(and (>= score 40) (< score 80)) 'P]
+    [(>= score 80) 'G]))
+  
+;4
+(define (second n)
+  (quotient (modulo n 100) 10))
+
+;5
+(define (each n)
+  (if (< n 10)
+      n
+      (* (modulo n 10) (each (quotient n 10)))))
+
+; ทดสอบฟังก์ชัน
+(sphere 5)      ; ผลลัพธ์: 523.5983333333332
+(triangle 20 4) ; ผลลัพธ์: 40
+(grade 50) ; ผลลัพธ์: 'P
+(second 1234) ; ผลลัพธ์: 3
+(each 1234) ; ผลลัพธ์: 24
+
+
+;โจทย์เกี่ยวกับลิสต์ 
+;1
+(reverse (list 1 2 3 4)) ; ผลลัพธ์: '(4 3 2 1)
+
+;2
+(require racket/list)
+(permutations '(1 2 3))
+
+(define last'(a b c d))
+(car(cdr(cdr(cdr last))))
+
+;4
+(define (removelast lst)
+  (if (null? (rest lst))  ; ถ้าลิสต์มีสมาชิกเพียงตัวเดียว
+      '()                 ; คืนลิสต์ว่าง
+      (cons (first lst)   ; คืนสมาชิกตัวแรก
+            (removelast (rest lst))))) ; เรียกฟังก์ชันซ้ำ
+
+; ทดสอบฟังก์ชัน
+(removelast '(a b c d)) ; ผลลัพธ์: '(a b c)
+
+
+
+
